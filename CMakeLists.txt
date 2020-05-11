@@ -9,15 +9,15 @@ project(boost-ui LANGUAGES CXX)
 option(UI_BUILD_TESTING "Build SelfTest project" ON)
 option(UI_BUILD_EXAMPLE "Build documentation examples" ON)
 
-add_subdirectory(src)
+add_subdirectory(sources)
 
 if(UI_BUILD_TESTING)
   enable_testing()
-  add_subdirectory(test)
+  add_subdirectory(tests)
 endif()
 
 if(UI_BUILD_EXAMPLE)
-  add_subdirectory(example)
+  add_subdirectory(examples)
 endif()
 
 # Require out-of-source builds
