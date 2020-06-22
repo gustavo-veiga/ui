@@ -6,11 +6,13 @@ endif()
 
 project(boost-ui LANGUAGES CXX)
 
+set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
+
 option(UI_BUILD_DOCS "Build documentation" ON)
 option(UI_BUILD_TESTS "Build SelfTest project" ON)
 option(UI_BUILD_EXAMPLES "Build documentation examples" ON)
 
-add_subdirectory(sources)
+# add_subdirectory(sources)
 
 # Compile Doxygen Docs
 if(UI_BUILD_DOCS)
@@ -25,8 +27,6 @@ endif()
 if(UI_BUILD_EXAMPLES)
   add_subdirectory(examples)
 endif()
-
-set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 
 # Require out-of-source builds
 file(TO_CMAKE_PATH "${PROJECT_BINARY_DIR}/CMakeLists.txt" LOC_PATH)
